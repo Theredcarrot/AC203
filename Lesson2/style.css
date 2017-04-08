@@ -1,3 +1,12 @@
 body {
-	background-color: coral;
+	background-color: lightblue;
+}
+
+p {
+	color: coral;
+	font-size: 30px;
+}
+
+h1 {
+	color: orange;
 }
