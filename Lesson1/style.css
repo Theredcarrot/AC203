@@ -1,0 +1,20 @@
+body {
+	background-color: lightblue;
+}
+
+ul {
+	color: coral;
+	font-size: x-large;
+}
+
+#myCanvas {
+	border: 2px orange dotted;
+}
+
+#yourCanvas {
+	border: 2px orange dotted;
+}
+
+#draftCanvas {
+	border: 2px orange dotted;
+}
