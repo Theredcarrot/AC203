@@ -6,7 +6,7 @@ var life = 1;
 
 function preload(){
 	game.load.image('sky', 'assets/sky.png');
-	game.load.image('ground', 'assets/ground.png');
+	game.load.image('ground', 'assets/platform.png');
 	game.load.image('star', 'assets/star.png');
 	game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
 	game.load.spritesheet('baddie', 'assets/baddie.png', 32, 32);
@@ -37,24 +37,24 @@ function create(){
 	player.body.collideWorldBounds = true;
 
 	enemy1 = game.add.sprite(760, 20, 'baddie');
-	enemy1.animation.add('left', [0,1], 10, true);
-	enemy1.animation.add('right', [2,3], 10, true);
+	enemy1.animations.add('left', [0,1], 10, true);
+	enemy1.animations.add('right', [2,3], 10, true);
 	game.physics.arcade.enable(enemy1);
 	enemy1.body.bounce.y = 0.2;
 	enemy.body.gravity.y = 500;
 	enemy1.body.collideWorldBounds = true;
 
 	enemy2 = game.add.sprite(10, 20, 'baddie');
-	enemy2.animation.add('left', [0,1], 10, true);
-	enemy2.animation.add('right', [2,3], 10, true);
+	enemy2.animations.add('left', [0,1], 10, true);
+	enemy2.animations.add('right', [2,3], 10, true);
 	game.physics.arcade.enable(enemy2);
 	enemy2.body.bounce.y = 0.2;
 	enemy.body.gravity.y = 500;
 	enemy2.body.collideWorldBounds = true;
 
 	enemy3 = game.add.sprite(200, 20, 'baddie');
-	enemy3.animation.add('left', [0,1], 10, true);
-	enemy3.animation.add('right', [2,3], 10, true);
+	enemy3.animations.add('left', [0,1], 10, true);
+	enemy3.animations.add('right', [2,3], 10, true);
 	game.physics.arcade.enable(enemy3);
 	enemy3.body.bounce.y = 0.2;
 	enemy.body.gravity.y = 500;
