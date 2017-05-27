@@ -1,0 +1,12 @@
+body {
+	background-color: teal;
+}
+
+canvas {
+	border: 2px coral dashed;
+}
+
+h2 {
+	font-size: 80px;
+	color: lightblue;
+}
