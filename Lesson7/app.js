@@ -159,6 +159,15 @@ function update(){
 	game.physics.arcade.overlap(player, enemy2, guiltLeft, null, this);
 	game.physics.arcade.overlap(player, enemy3, guilt, null, this);
 	game.physics.arcade.overlap(player, healths, restore, null, this);
+	
+	if(life < 0){
+		endGame();
+	}
+		
+	if(score % 10 == 0){
+		health = healths.create(Math.floor(Math.random()*750),0,'health');
+		health.body.gravity.y = 200;
+	}
 }
 
 
@@ -186,15 +195,31 @@ function guiltLeft(player,enemy){
 	enemy.reset(20, 30);
 }
 
-function restore(player,healths){
+function restore(player,health){
 	life += 1;
 	lifetext.setText(life);
-	healths.kill();
-	healths.reset(20, 30);
+	health.kill();
+	health.reset(20, 30);
 }
 
 
+function endGame(){
+	player.kill();
+	goText.text = "GAME OVER: \n DON'T GIVE UP \n You scored:" + score + "\n Press Enter to continue your journey...";
+	goText.visible = true;
+	scorelabels.visible = false;
+	scoretext.visible = false;
+	lifelabel.visible = false;
+	lifetext.visible = false;
+	
+	var restardButton = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+	restartButton.onDown.addOnce(resetartGame);
+	
+}
 
+function restartGame(){
+	
+}
 
 
 
