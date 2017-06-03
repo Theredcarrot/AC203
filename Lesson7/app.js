@@ -10,6 +10,8 @@ function preload(){
 	game.load.image('star', 'assets/star.png');
 	game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
 	game.load.spritesheet('baddie', 'assets/baddie.png', 32, 32);
+	
+	game.load.image('health','assets/firstaids.png');
 }
 
 function create(){
@@ -69,6 +71,9 @@ function create(){
 		star.body.gravity.y = 200;
 		star.body.bounce.y = 0.7 + Math.random() * 0.2;
 	}
+	
+	healths = game.add.physicsGroup();
+	healths.enableBody = true;
 
 	var style = {font: "bold 32px Lobster", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle"};
 
@@ -82,14 +87,19 @@ function create(){
 	lifetext = game.add.text(-240,0,life,style);
 	lifelabel.setTextBounds(0,0,1000,100);
 	lifetext.setTextBounds(0,0,1100,100);
+	
+	goText = game.add.text(0,0,'',style);
+	goText.setTextBounds(100,200,800,100);
+	goText.visible = false;
 }
+	
 
 function update(){
 	game.physics.arcade.collide(player,platforms);
 	game.physics.arcade.collide(enemy1,platforms);
 	game.physics.arcade.collide(enemy2,platforms);
 	game.physics.arcade.collide(enemy3,platforms);
-	
+	game.physics.arcade.collide(healths,platforms);
 
 
 	player.body.velocity.x = 0;
@@ -148,6 +158,7 @@ function update(){
 	game.physics.arcade.overlap(player, enemy1, guilt, null, this);
 	game.physics.arcade.overlap(player, enemy2, guiltLeft, null, this);
 	game.physics.arcade.overlap(player, enemy3, guilt, null, this);
+	game.physics.arcade.overlap(player, healths, restore, null, this);
 }
 
 
@@ -173,6 +184,13 @@ function guiltLeft(player,enemy){
 	lifetext.setText(life);
 	enemy.kill();
 	enemy.reset(20, 30);
+}
+
+function restore(player,healths){
+	life += 1;
+	lifetext.setText(life);
+	healths.kill();
+	healths.reset(20, 30);
 }
 
 
