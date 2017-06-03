@@ -18,9 +18,9 @@ function create(){
 	platforms = game.add.physicsGroup();
 	platforms.enableBody = true;
 
-	var platforms = platforms.create(0, 550, 'platforms')
-	platforms.scale.setTo(2, 2);
-	platforms.body.immovable = true;
+	var ground = platforms.create(0, 550, 'platforms')
+	ground.scale.setTo(2, 2);
+	ground.body.immovable = true;
 
 	var ledge = platforms.create(400, 400, 'platforms');
 	ledge.body.immovable = true;
