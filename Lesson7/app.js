@@ -41,7 +41,7 @@ function create(){
 	enemy1.animations.add('right', [2,3], 10, true);
 	game.physics.arcade.enable(enemy1);
 	enemy1.body.bounce.y = 0.2;
-	enemy.body.gravity.y = 500;
+	enemy1.body.gravity.y = 500;
 	enemy1.body.collideWorldBounds = true;
 
 	enemy2 = game.add.sprite(10, 20, 'baddie');
@@ -49,7 +49,7 @@ function create(){
 	enemy2.animations.add('right', [2,3], 10, true);
 	game.physics.arcade.enable(enemy2);
 	enemy2.body.bounce.y = 0.2;
-	enemy.body.gravity.y = 500;
+	enemy2.body.gravity.y = 500;
 	enemy2.body.collideWorldBounds = true;
 
 	enemy3 = game.add.sprite(200, 20, 'baddie');
@@ -57,7 +57,7 @@ function create(){
 	enemy3.animations.add('right', [2,3], 10, true);
 	game.physics.arcade.enable(enemy3);
 	enemy3.body.bounce.y = 0.2;
-	enemy.body.gravity.y = 500;
+	enemy3.body.gravity.y = 500;
 	enemy3.body.collideWorldBounds = true;
 
 	cursors = game.input.keyboard.createCursorKeys();
