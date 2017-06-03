@@ -81,7 +81,7 @@ function create(){
 	lifelabel = game.add.text(-300,0,"Determination: ", style);
 	lifetext = game.add.text(-240,0,life,style);
 	lifelabel.setTextBounds(0,0,1000,100);
-	lifetext.setTextBounds(0,0,1000,300);
+	lifetext.setTextBounds(0,0,1200,100);
 }
 
 function update(){
