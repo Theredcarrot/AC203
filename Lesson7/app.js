@@ -108,7 +108,11 @@ function update(){
 	if(cursors.up.isDown && player.body.touching.down){
 		player.body.velocity.y = -600;
 	}
-
+	
+	if(cursors.down.isDown && player.body.touching.down){
+		player.body.velocity.y = 300;
+	}
+	
 	if(enemy1.x > 759){
 		enemy1.animations.play('left');
 		enemy1.body.velocity.x = -120;
