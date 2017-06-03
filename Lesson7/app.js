@@ -106,11 +106,11 @@ function update(){
 	}
 
 	if(cursors.up.isDown && player.body.touching.down){
-		player.body.velocity.y = -600;
+		player.body.velocity.y = -500;
 	}
 	
 	if(cursors.down.isDown){
-		player.body.velocity.y = 300;
+		player.body.velocity.y = 700;
 	}
 	
 	if(enemy1.x > 759){
