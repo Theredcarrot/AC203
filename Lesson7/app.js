@@ -218,15 +218,16 @@ function endGame(){
 }
 
 function restartGame(){
-	
+	score = 0;
+	life = 1;
+	player.reset(32, 400);
+	lifetext.setText(life);
+	scoretext.setText(32, 400);
+	goText.visible = false;
+	scorelabels.visible = true;
+	scoretext.visible = true;
+	lifelabel.visible = true;
+	lifetext.visible = true;
+
 }
-
-
-
-
-
-
-
-
-
 
